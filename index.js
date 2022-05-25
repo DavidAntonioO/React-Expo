@@ -1,22 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import App, { reducer, asyncMiddleware } from './App';
+import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const args = [
-  reducer,
-  asyncMiddleware ? applyMiddleware(asyncMiddleware) : undefined
-]
-
-const store = createStore(...args)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
